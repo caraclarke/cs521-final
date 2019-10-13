@@ -18,7 +18,7 @@ from ScrabbleWords import ScrabbleWords
 
 def main():
     # switch this to be from user and try/except
-    user_input = 'aeinpto'
+    user_input = 'aiinpto'
     # 10/14 goal
     # get input from user -> 7 letters
     # try/except to make sure its a string

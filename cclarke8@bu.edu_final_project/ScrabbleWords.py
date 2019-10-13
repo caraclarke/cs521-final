@@ -6,7 +6,9 @@ class ScrabbleWords(WordScores):
     def __init__(self, user_string):
         super().__init__()
         # public attributes
-        self.user_string = user_string  # merged string of letters available to user
+        # merged string of letters available to user
+        self.user_string = user_string
+        # count of occurance of each letter in provided string
         self.counted_string = Counter(user_string)
         # private attribute
         # maybe another private attr with scores per letter
