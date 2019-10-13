@@ -31,7 +31,7 @@ class ScrabbleWords():
     # Description
     # Returns
     def get_words_from_dictionary(self):
-        with open('words_alpha.txt') as dictionary:
+        with open('dictionary.txt') as dictionary:
             lines = (word.strip().lower() for word in dictionary)
             # list with word and count of each letter in word
             words = [(word, Counter(word)) for word in lines]
@@ -40,10 +40,18 @@ class ScrabbleWords():
     # Description: Open word dictionary and find words that use provided letters
     # Returns: list of potential words to be used
     def get_words_list(self):
-        for scrabble_word, letter_count in self.__words:
-            # Using length here to limit output for example purposes
-            if len(scrabble_word) >= 7 and not (letter_count - self.__counted_string):
-                print(scrabble_word)
+        # Empty list to return to user
+        potential_words = []
+        # new_word is a word in self.__words, word_length is the count of each letter in a word
+        for new_word, word_length in self.__words:
+            # if there is nothing lef after you subtract word_length from the count of user provided letters
+            # That is a word our user could use
+            # Only return words that use at least two letters so they can be played onto the board
+            if len(new_word) >= 2 and not (word_length - self.__counted_string):
+                # Add to potential words list to be returned to user
+                potential_words.append(new_word)
+        # Return list
+        return potential_words
 
 
 def main():
