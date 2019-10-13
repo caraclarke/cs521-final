@@ -1,8 +1,10 @@
 from collections import Counter
+from WordScores import WordScores
 
 
-class ScrabbleWords():
+class ScrabbleWords(WordScores):
     def __init__(self, user_string):
+        super().__init__()
         # merged string of letters available to user
         self.__user_string = user_string
         self.__counted_string = Counter(user_string)
@@ -47,7 +49,8 @@ class ScrabbleWords():
             # If the suggested word is at least 2 letters (so it can be played on the board)
             # and if there is nothing left after you subtract word_length from the count of user provided letters
             if len(new_word) >= 2 and not (word_length - self.__counted_string):
-                # Add to potential words list to be returned to user
-                potential_words.append(new_word)
-        # Return list
-        return potential_words
+                word_score = self.get_word_score(new_word)
+                # Add tuple with word and score to list to be returned
+                potential_words.append((new_word, word_score))
+        # Return list sorted by low -> high scores
+        return sorted(potential_words, key=lambda score: score[1])
