@@ -44,9 +44,8 @@ class ScrabbleWords():
         potential_words = []
         # new_word is a word in self.__words, word_length is the count of each letter in a word
         for new_word, word_length in self.__words:
-            # if there is nothing lef after you subtract word_length from the count of user provided letters
-            # That is a word our user could use
-            # Only return words that use at least two letters so they can be played onto the board
+            # If the suggested word is at least 2 letters (so it can be played on the board)
+            # and if there is nothing left after you subtract word_length from the count of user provided letters
             if len(new_word) >= 2 and not (word_length - self.__counted_string):
                 # Add to potential words list to be returned to user
                 potential_words.append(new_word)
