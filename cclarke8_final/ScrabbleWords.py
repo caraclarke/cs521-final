@@ -28,8 +28,8 @@ class ScrabbleWords():
     def set_words(self, words):
         self.__words = words
 
-    # Description
-    # Returns
+    # Description: read txt file and create word dictionary
+    # Returns list with tuple containing word and count of each letter in word
     def get_words_from_dictionary(self):
         with open('dictionary.txt') as dictionary:
             lines = (word.strip().lower() for word in dictionary)
