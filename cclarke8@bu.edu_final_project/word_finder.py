@@ -4,6 +4,11 @@ Main file to run the word finder program
 import sys
 from ScrabbleWords import ScrabbleWords
 
+'''
+Description: Starts function to allow user to input letters
+Returns: Formatted list of suggested words and scores
+'''
+
 
 def main():
     # switch this to be from user and try/except

@@ -14,8 +14,12 @@ class WordScores():
     def set_letter_scores(self, letter_scores):
         self.__LETTER_SCORES = letter_scores
 
-    # Description: Pass in word and get potential score
-    # Returns: numeric score for word
+    '''
+    Description: Pass in word and get potential score
+    word: string to iterate through
+    Returns: numeric score for word
+    '''
+
     def get_word_score(self, word):
         # word score starts at 0
         total = 0

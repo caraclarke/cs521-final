@@ -28,19 +28,25 @@ class ScrabbleWords(WordScores):
     def set_user_string(self, user_string):
         self.user_string = user_string
 
-    def set_counted_string(self, counted_string):  # should we be setting this?
+    def set_counted_string(self, counted_string):
         self.counted_string = counted_string
 
     def set_words(self, words):
         self.__words = words
 
-    # Description: override repr to return letter count of user provided string
-    # Returns: count of letters provided by user
+    '''
+    Description: override repr to return letter count of user provided string
+    Returns: count of letters provided by user
+    '''
+
     def __repr__(self):
         return repr(self.counted_string)
 
-    # Description: read txt file and create word dictionary
-    # Returns list with tuple containing word and count of each letter in word
+    '''
+    Description: read txt file and create word dictionary
+    Returns list with tuple containing word and count of each letter in word
+    '''
+
     def __get_words_from_dictionary(self):
         with open('dictionary.txt') as dictionary:
             lines = (word.strip().lower() for word in dictionary)
@@ -48,8 +54,11 @@ class ScrabbleWords(WordScores):
             words = [(word, Counter(word)) for word in lines]
         return words
 
-    # Description: Open word dictionary and find words that use provided letters
-    # Returns: list of potential words to be used
+    '''
+    Description: Open word dictionary and find words that use provided letters
+    Returns: list of potential words to be used
+    '''
+
     def get_words_list(self):
         # Empty list to return to user
         potential_words = []
