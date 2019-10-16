@@ -29,8 +29,14 @@ def main():
         else:
             user_words = ScrabbleWords(user_input)
 
-    # Display nicely with point values
-    print(user_words.get_words_list())
+    # get potential words from class
+    sorted_words = user_words.get_words_list()
+    # format nicely and display to user
+    for word in sorted_words:
+        print("""Suggested word: {}
+Potential score: {}
+________________________________________
+        """.format(*word))
 
 
 if __name__ == '__main__':

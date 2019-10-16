@@ -61,5 +61,5 @@ class ScrabbleWords(WordScores):
                 word_score = self.get_word_score(new_word)
                 # Add tuple with word and score to list to be returned
                 potential_words.append((new_word, word_score))
-        # Return list sorted by low -> high scores
+        # sort list by low -> high scores and return
         return sorted(potential_words, key=lambda score: score[1])
