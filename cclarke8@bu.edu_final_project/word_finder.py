@@ -18,14 +18,19 @@ from ScrabbleWords import ScrabbleWords
 
 def main():
     # switch this to be from user and try/except
-    user_input = 'aiinpto'
-    # 10/14 goal
-    # get input from user -> 7 letters
-    # try/except to make sure its a string
-    # merge into one string and pass to words
-    thing = ScrabbleWords(user_input)
+    user_input = input('Enter all available letters for your turn: ')
+    for value in user_input:
+        try:  # Check user didn't enter numbers
+            if value.isdigit():
+                raise Exception('value is int or float')
+        except:  # Exit if another exception occurs
+            print("Please enter only letters. Try again")
+            sys.exit()
+        else:
+            user_words = ScrabbleWords(user_input)
+
     # Display nicely with point values
-    print(thing.get_words_list())
+    print(user_words.get_words_list())
 
 
 if __name__ == '__main__':
