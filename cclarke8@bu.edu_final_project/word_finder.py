@@ -12,10 +12,8 @@ Returns: None
 
 def print_words(words):
     for word in words:
-        print("""Suggested word: {}
-        Potential score: {}
-        ________________________________________
-        """.format(*word))
+        print(
+            "Suggested word: {: >10} | Potential score: {: >10}".format(*word))
 
 
 '''
@@ -62,7 +60,8 @@ def main():
     if (player_count > 1):
         # loop through all the players
         for player, index in enumerate(range(player_count)):
-            user_words = play_round(index)
+            # Start at player 1 not player 0
+            user_words = play_round(index + 1)
             # get potential words from class
             sorted_words = user_words.get_words_list()
             # format nicely and display to user
