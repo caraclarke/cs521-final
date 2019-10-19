@@ -1,5 +1,5 @@
 '''
-Main file to run the word finder program
+Main file to run the scrabble game word finder program
 '''
 import sys
 from ScrabbleWords import ScrabbleWords
@@ -8,8 +8,6 @@ from ScrabbleWords import ScrabbleWords
 Description: Prints list of words out for user
 Returns: None
 '''
-
-
 def print_words(words):
     for word in words:
         print(
@@ -21,8 +19,6 @@ Description: Gets user input for letters and checks for potential matches
 index: current player, default 1
 Returns: List of potential words
 '''
-
-
 def play_round(index=1):
     user_input = input(
         'Player {}, Enter all available letters for your turn: '.format(index))
@@ -42,8 +38,6 @@ def play_round(index=1):
 Description: Plays a round of scrabble
 Returns: Prints formatted word suggestions based on user input
 '''
-
-
 def word_finder(player_count):
     # Loop through players if more than one
     if player_count > 1:
@@ -66,8 +60,6 @@ def word_finder(player_count):
 Description: Starts function to allow user to input letters
 Returns: Formatted list of suggested words and scores
 '''
-
-
 def main():
     player_input = input("How many players are playing today? ")
     # Whether the play wants to continue the game, will switch to 0 if they enter it
@@ -90,8 +82,8 @@ def main():
             "Would you like to continue? Enter 0 to end game or 1 to continue. ")
         try:
             player_continue = int(continue_input)
-            if player_continue > 1:
-                # loosely check that they aren't entering some random number
+            if player_continue > 1 or player_continue < 0:
+                # check that they aren't entering some random number
                 # Show error and exit if they do
                 raise Exception('input too high')
         except ValueError:  # if they dont enter a number show error and exit
