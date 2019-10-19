@@ -44,8 +44,6 @@ WORDS_FROM_PYTHON = [('to', 2),
 Description: Helper function to get words from dictionary file
 Returns: words from dictionary.txt
 '''
-
-
 def get_dictionary_helper():
     with open('dictionary.txt') as dictionary:
         lines = (word.strip().lower() for word in dictionary)
@@ -54,8 +52,6 @@ def get_dictionary_helper():
     return words
 
 # Test ScrabbleWords Class
-
-
 class TestScrabbleWords(unittest.TestCase):
     def test_get_user_string(self):
         self.scrabble_word = ScrabbleWords('python')

@@ -8,8 +8,6 @@ from ScrabbleWords import ScrabbleWords
 Description: Prints list of words out for user
 Returns: None
 '''
-
-
 def print_words(words):
     for word in words:
         print(
@@ -21,8 +19,6 @@ Description: Gets user input for letters and checks for potential matches
 index: current player, default 1
 Returns: List of potential words
 '''
-
-
 def play_round(index=1):
     user_input = input(
         'Player {}, Enter all available letters for your turn: '.format(index))
@@ -42,8 +38,6 @@ def play_round(index=1):
 Description: Starts function to allow user to input letters
 Returns: Formatted list of suggested words and scores
 '''
-
-
 def main():
     # switch this to be from user and try/except
     player_input = input("How many players are playing today? ")

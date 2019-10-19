@@ -5,8 +5,6 @@ from WordScores import WordScores, WORD_SCORES_DICT
 MOCK_SCORES = {'a': 22, 'z': 47}
 
 # Test WordScores Class
-
-
 class TestWordScores(unittest.TestCase):
     def test_get_letter_scores(self):
         self.word_scores = WordScores()
