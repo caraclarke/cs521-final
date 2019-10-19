@@ -48,6 +48,7 @@ class ScrabbleWords(WordScores):
     '''
 
     def __get_words_from_dictionary(self):
+        # dictionary.txt contains Collins Scrabble Words (2019)
         with open('dictionary.txt') as dictionary:
             lines = (word.strip().lower() for word in dictionary)
             # list with word and count of each letter in word
