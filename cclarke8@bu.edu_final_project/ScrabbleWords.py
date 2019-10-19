@@ -3,6 +3,7 @@ from WordScores import WordScores
 
 
 # Class for taking user string and returning list of potential words/their scores
+# Inherits from WordScores Class
 class ScrabbleWords(WordScores):
     def __init__(self, user_string):
         super().__init__()
@@ -12,6 +13,7 @@ class ScrabbleWords(WordScores):
         # count of occurance of each letter in provided string
         self.counted_string = Counter(user_string)
         # private attribute
+        # words available from dictionary file
         self.__words = self.__get_words_from_dictionary()
 
     # Accessors
@@ -46,6 +48,8 @@ class ScrabbleWords(WordScores):
     Returns list with tuple containing word and count of each letter in word
     '''
     def __get_words_from_dictionary(self):
+        # Depending on the input getting the suggested word can take a while
+        # Show message to let user know something is happening
         print("We're thinking...")
         # dictionary.txt contains Collins Scrabble Words (2019)
         with open('dictionary.txt') as dictionary:
@@ -59,7 +63,7 @@ class ScrabbleWords(WordScores):
     Returns: list of potential words to be used
     '''
     def get_words_list(self):
-        # Empty list to return to user
+        # Empty list
         potential_words = []
         # new_word is a word in self.__words, word_length is the count of each letter in a word
         for new_word, word_length in self.__words:

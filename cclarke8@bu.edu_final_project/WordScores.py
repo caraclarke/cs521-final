@@ -33,6 +33,7 @@ class WordScores():
         # word score starts at 0
         total = 0
         for letter in word:
+            # add score value of each letter to base
             total += self.__LETTER_SCORES[letter]
         # Return total word score
         return total
