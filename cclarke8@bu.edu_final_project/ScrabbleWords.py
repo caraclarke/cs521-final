@@ -7,12 +7,10 @@ from WordScores import WordScores
 class ScrabbleWords(WordScores):
     def __init__(self, user_string):
         super().__init__()
-        # public attributes
         # merged string of letters available to user
         self.user_string = user_string
         # count of occurance of each letter in provided string
         self.counted_string = Counter(user_string)
-        # private attribute
         # words available from dictionary file
         self.__words = self.__get_words_from_dictionary()
 
