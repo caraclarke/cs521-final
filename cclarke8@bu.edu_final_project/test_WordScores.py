@@ -19,6 +19,11 @@ class TestWordScores(unittest.TestCase):
         new_scores = self.word_scores.get_letter_scores()
         self.assertEqual(new_scores, MOCK_SCORES)
 
+    def test__repr__(self):
+        self.word_scores = WordScores()
+        test_repr = self.word_scores.__repr__()
+        self.assertEqual(test_repr, str(WORD_SCORES_DICT))
+
     def test_get_word_score(self):
         self.word_scores = WordScores()
         test_word_score = self.word_scores.get_word_score('python')

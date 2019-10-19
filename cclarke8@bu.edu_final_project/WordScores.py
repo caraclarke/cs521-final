@@ -20,6 +20,14 @@ class WordScores():
         self.__LETTER_SCORES = letter_scores
 
     '''
+    Description: override repr to return letter scores
+    Returns: dictionary of with key value letter/score
+    '''
+
+    def __repr__(self):
+        return repr(self.__LETTER_SCORES)
+
+    '''
     Description: Pass in word and get potential score
     word: string to iterate through
     Returns: numeric score for word
